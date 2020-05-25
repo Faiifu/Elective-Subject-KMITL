@@ -25,18 +25,24 @@
     <nav>Elective Subject KMITL</nav>
     <br>
     <div class="container">
+        <div class="row justify-content-between">
+            <div>
+                <img src="back.png" class="back" id="undo" onclick="page()">
+            </div>
+        </div>
+        <br>
         <div class="row">
-            <div class="col-sm-8"></div>
+            <div class="col-sm-12">
+                <div class="row">
+                    <h5 id="name_subject"></h5>
+                </div>
+                <div class="row">
+                    <label id="description"></label>
+                </div>
+                <div class="row" id="out">
+                </div>
+            </div>
         </div>
-        <div class="row">
-            <h5 id="name_subject"></h5>
-        </div>
-        <div class="row">
-            <label id="description"></label>
-        </div>
-        <div class="row" id="out">
-        </div>
-    </div>
 </body>
 
 <!-- firebase -->
@@ -102,4 +108,15 @@
             }
         });
     });
+</script>
+
+<script>
+    function page() {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const page_type = urlParams.get('fac')
+        var sel = document.getElementById('undo')
+        var val = sel.value
+        window.location.replace("social.html?fac=" + page_type);
+    }
 </script>

@@ -25,14 +25,13 @@
     <nav>Elective Subject KMITL</nav>
     <br>
     <div class="container">
-        <div class="row">
-            <div class="col-sm-8"></div>
-            <!-- <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn" type="submit">Search</button>
-            </form> -->
-            <div class="col-sm-10"></div>
-            <button type="button" class="write btn btn-warning"><a class="write_go" href="write.html">Review wirte</a></button>
+        <div class="row justify-content-between">
+            <div>
+                <a href="index.html"><img src="back.png" class="back"></a>
+            </div>
+            <div class="write">
+                <button type="button" class="btn btn-warning" onclick="chang()">Review wirte</button>
+            </div>
         </div>
         <br>
         <h4 id="name_elec"></h4>
@@ -75,8 +74,11 @@
 
 <script>
     function myFunction2(id) {
+        window.location.replace("review.html?fac=" + page_type + "&sub=" + id);
+    }
 
-        window.open("review.html?fac=" + page_type + "&sub=" + id);
+    function chang() {
+        window.location.replace("write.html?fac=");
     }
 </script>
 

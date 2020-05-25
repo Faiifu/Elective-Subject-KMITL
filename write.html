@@ -26,6 +26,12 @@
     <nav>Elective Subject KMITL</nav>
     <br>
     <div class="container">
+        <div class="row justify-content-between">
+            <div>
+                <img src="home-run.png" class="back" id="undo2" onclick="page2()">
+            </div>
+        </div>
+        <br>
         <form action="#">
             <div class="form-group">
                 <div class="row">
@@ -155,5 +161,16 @@
             subject: subject,
             review: review
         });
+    }
+</script>
+
+<script>
+    function page2() {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const page_type = urlParams.get('fac')
+        var sel = document.getElementById('undo2')
+        var val = sel.value
+        window.location.replace("index.html?fac=" + page_type);
     }
 </script>

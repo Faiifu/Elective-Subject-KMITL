@@ -31,6 +31,11 @@ img {
     cursor: pointer;
 }
 
+.back {
+    width: 50px;
+    padding-left: 1em;
+}
+
 
 /* social.html */
 
@@ -39,7 +44,7 @@ img {
 }
 
 .write {
-    float: left;
+    padding-right: 1em;
 }
 
 .sub {
@@ -63,6 +68,10 @@ img {
 .review-text {
     margin-top: 2em;
     font-size: 16px;
+}
+
+#name_subject {
+    padding: 1em;
 }
 
 

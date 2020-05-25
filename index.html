@@ -57,7 +57,7 @@
     function myFunction() {
         var sel = document.getElementById('elective')
         var val = sel.value
-        window.open("social.html?fac=" + val);
+        window.location.replace("social.html?fac=" + val);
     }
 </script>
 
@@ -67,95 +67,11 @@
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
-<!-- JavaScript -->
-<!-- choose faculty -->
-<!-- <script>
-    var json_var;
-    let requestURL = 'data.json';
-    let request = new XMLHttpRequest();
-    request.onreadystatechange = function() {
-        if (request.readyState == 4 && request.status == 200) {
-            var myJSON = JSON.parse(request.responseText);
-            json_var = myJSON;
-            for (let [key, value] of Object.entries(json_var)) {
-                var sel = document.getElementById('select0');
-                var opt = document.createElement('option');
-                opt.appendChild(document.createTextNode(`${key}`));
-                opt.value = `${key}`;
-                sel.appendChild(opt);
-            }
-            change0()\  
-        }
-    };
-    request.open("GET", requestURL, true);
-    request.send();
-
-    function change0() { // Term
-        document.getElementById("select1").options.length = 0;
-        sel0 = document.getElementById('select0').value;
-        for (let [key, value] of Object.entries(json_var[sel0])) {
-            var sel = document.getElementById('select1');
-            var opt = document.createElement('option');
-            opt.appendChild(document.createTextNode(`${value.Term}`));
-            opt.value = `${value.Term}`;
-            sel.appendChild(opt);
-        }
-        change1()
-    }
-
-    function change1() { // Faculty
-        document.getElementById("select2").options.length = 0;
-        sel0 = document.getElementById('select0').value;
-        sel1 = document.getElementById('select1').value;
-        for (let [key1, value] of Object.entries(json_var[sel0])) {
-            if (value.Term == sel1) {
-                for (let [key2, value] of Object.entries(json_var[sel0][key1].Faculty)) {
-                    var sel = document.getElementById('select2');
-                    var opt = document.createElement('option');
-                    opt.appendChild(document.createTextNode(`${key2}`));
-                    opt.value = `${key2}`;
-                    sel.appendChild(opt);
-                }
-            }
-        }
-        change2()
-    }
-
-    function change2() { // Faculty
-        document.getElementById("select3").options.length = 0;
-        sel0 = document.getElementById('select0').value;
-        sel1 = document.getElementById('select1').value;
-        sel2 = document.getElementById('select2').value;
-        for (let [key1, value] of Object.entries(json_var[sel0])) {
-            if (value.Term == sel1) {
-                for (let [key2, value] of Object.entries(json_var[sel0][key1].Faculty)) {
-                    if (key2 == sel2) {
-                        value.Category.forEach(element => {
-                            var sel = document.getElementById('select3');
-                            var opt = document.createElement('option');
-                            opt.appendChild(document.createTextNode(`${element}`));
-                            opt.value = `${element}`;
-                            sel.appendChild(opt);
-                        });
-                    }
-                }
-            }
-
-        }
-    }
-</script> -->
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
-
-<script>
-    function mockupClick(pageToHide, pageToShow) {
-        document.querySelector('#' + pageToHide).style.display = "none ";
-        document.querySelector('#' + pageToShow).style.display = "block ";
-    }
-</script>
 
 </html>
