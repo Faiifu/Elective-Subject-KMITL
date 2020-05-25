@@ -32,7 +32,7 @@
             </div>
         </div>
         <br>
-        <form action="#">
+        <form>
             <div class="form-group">
                 <div class="row">
                     <div class="col-sm-6">
@@ -58,12 +58,14 @@
                     <div class="col-sm-6">
                         <label>วิชาเลือกกลุ่ม</label>
                         <select name="" id="elective-subject" class="form-control" onchange="chang1()" required>
+                                <option selected="rate" value="" disabled>select</option>    
                                 <option value="select-elec"></option>
                             </select>
                     </div>
                     <div class="col-sm-6">
                         <label>วิชา</label>
                         <select name="" id="subject" class="form-control" required>
+                            <option selected="rate" value="" disabled>select</option>
                             <option value=""></option>
                         </select>
                     </div>
@@ -79,7 +81,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
-                        <button type="submit" class="btn btn-outline-success success btn-block" onclick="upload()">Success</button>
+                        <button type="button" class="btn btn-outline-success success btn-block" onclick="upload()">Success</button>
                     </div>
                 </div>
             </div>
@@ -154,13 +156,20 @@
         var subject = document.getElementById("subject").value.slice(0, 8);
         var review = document.getElementById("review-write").value;
         console.log(year, term, elective, subject, review);
-        db.collection("store").add({
-            year: year,
-            term: term,
-            elective: elective,
-            subject: subject,
-            review: review
-        });
+        console.log(year != "");
+        console.log(term != "");
+        console.log(elective != "");
+        console.log(subject != "");
+        console.log(review != "");
+        if (year != "" && term != "" && elective != "" && subject != "" && review != "") {
+            db.collection("store").add({
+                year: year,
+                term: term,
+                elective: elective,
+                subject: subject,
+                review: review
+            });
+        }
     }
 </script>
 
